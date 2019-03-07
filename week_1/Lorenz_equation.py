@@ -21,8 +21,17 @@ tr = track2-track1
 fig = plt.figure()
 ax = Axes3D(fig)
 
-ax.plot(tr[:,0],tr[:,1],tr[:,2],c = 'r')
+
+ax.plot(tr[:,0],tr[:,1],tr[:,2], c = 'r')
 plt.show()
+
+"""
+ax.plot(track1[:,0],track1[:,1],track1[:,2], c = 'b')
+plt.show()
+
+ax.plot(track2[:,0],track2[:,1],track2[:,2], c = 'g')
+plt.show()
+"""
 
 #if change the initial value
 #track2 = odeint(lorenz,

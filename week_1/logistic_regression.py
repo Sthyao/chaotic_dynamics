@@ -10,10 +10,10 @@ r = np.linspace(0,4,4000,endpoint=True)
 x = 0.5
 """Initial value"""
 
-for i in range(1,150):
+for i in range(0,150):
     x = np.multiply(np.multiply(r, x), 1-x)
 
-for i in range(1,150):
+for i in range(0,150):
     x = np.multiply( np.multiply(r, x), 1-x)
     plt.scatter(r,x,s = 0.001,c = 'b')
 
