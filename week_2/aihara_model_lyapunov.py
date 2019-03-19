@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import math
+import lab
 
 k = 0.5 
 b = 0.04
@@ -16,9 +17,9 @@ for i in range(0,leng):
     sm = 0
     m = 0.001
     for j in range(0, 2000):
-        m = abs( k + A * math.exp( - y / b) / ( b * ( 1 + math.exp( -y / b ))**2))
+        m = lab.ly(y)
         sm  = sm + math.log(m, 2)
-        y = k * y - A * ( 1 / ( 1 + math.exp( -y/b ) )) + a[i]
+        y = lab.f(y , a[i])
     ly[i] = sm / 2000
 
 plt.scatter(a , ly ,s = 1, c = 'k')
