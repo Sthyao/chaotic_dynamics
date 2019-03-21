@@ -16,5 +16,5 @@ for i in range(0,leng):
     y[i] = lab.f(x,a[i])
     x = y[i]
 
-plt.scatter(a,y,s = 1,c = 'k')
+plt.scatter(a,y,s = 0.1,c = 'k')
 plt.show()   
