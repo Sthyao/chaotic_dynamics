@@ -5,8 +5,8 @@ Include:  </br>
     1 a simple pattern of Logistic Regression  </br>
     2 Lorenz equation  </br></br>
     3 Aihara single chaotic neutral model and its Lyapunov stability </br>
-        <<Chaotic Neural Networks>> by K.Aihara  </br>
+        "CHAOTIC NEURAL NETWORKSBY" K.Aihara  </br>
     4 Aihara chaotic netral networks model  </br>
         # a simple netral networks as AANN (autoassociative neural network) </br>
-        <<Associative Dynamics in a Chaotic Neural Network>> by K.Aihara , M.Adachi </br>
+        "ASSOCIATIVE DYNAMICS IN A CHAOTIC NEURAL NETWORK" by K.Aihara , M.Adachi </br>
     
