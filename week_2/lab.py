@@ -14,7 +14,7 @@ def ly(x):
     return abs( k + A * math.exp( -1 * x / b) / ( b * ( 1 + math.exp( -1 * x / b ))**2))
 
 def sigmoid(x):
-    if -x >= 25:
+    if -x/b >= 25:
         return 1/(1+math.exp(25))
     else:
         return 1/(1+math.exp(-x/b))
@@ -53,5 +53,5 @@ def number_to_image(a,id):
                         else:
                                 img.putpixel((i,j),pixTupleW)
         string = str(id) + '.png'
-        img.save( 'py/'+string, 'PNG')
+        img.save( 'd:\Git\chaos\week_2\py\\'+string, 'PNG')
         #img.show()

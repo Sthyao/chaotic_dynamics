@@ -3,6 +3,10 @@ by sthyao from 2019.Mar  </br>
 
 Include:  </br>
     1 a simple pattern of Logistic Regression  </br>
-        #About lyapunov exponent, derivatives of Iterated function is very complex  </br>
-    2 Lorenz equation  </br>
-
+    2 Lorenz equation  </br></br>
+    3 Aihara single chaotic neutral model and its Lyapunov stability </br>
+        <<Chaotic Neural Networks>> by K.Aihara  </br>
+    4 Aihara chaotic netral networks model  </br>
+        # a simple netral networks as AANN (autoassociative neural network) </br>
+        <<Associative Dynamics in a Chaotic Neural Network>> by K.Aihara , M.Adachi </br>
+    
