@@ -5,6 +5,7 @@ a0 = 2
 ar = 11
 kf = 0.15
 kr = 0.95
+t = 800
 
 a = np.array((
         1,1,0,0,0,0,0,0,1,1,
@@ -25,9 +26,9 @@ b = np.array((
     0,0,0,0,1,1,1,0,0,0,
     0,0,0,1,1,1,1,1,0,0,
     0,0,0,1,1,0,1,1,0,0,
-    0,0,1,1,1,1,0,1,1,0,
+    0,0,1,1,1,0,1,1,1,0,
     0,0,1,1,0,0,0,1,1,0,
-    0,1,1,1,0,0,0,1,1,0,
+    0,1,1,1,0,0,0,1,1,1,
     0,1,1,1,1,1,1,1,1,1,
     0,1,1,1,1,1,1,1,1,1,
 ))
@@ -82,14 +83,16 @@ def y(pettern,x,i,a):
     return fn(pettern,x,i) + fc(x,a)
 """
 
-x = np.zeros((501,4,100))
+x = np.zeros((5001,4,100))
+ni = np.zeros((5001,4,100))
+ci = np.zeros((5001,4,100))
+
 x[0][0] = pettern0[0]
 x[0][1] = pettern0[1]
 x[0][2] = pettern0[2]
 x[0][3] = pettern0[3]
 
-ni = np.zeros((501,4,100))
-ci = np.zeros((501,4,100))
+
 wij = np.zeros((100,100)) 
 
 for i in range(100):
@@ -97,8 +100,8 @@ for i in range(100):
                 for p in range(4):
                         wij[i][j] += (2*x[0][p][i]-1)*(2*x[0][p][j]-1)
                 wij[i][j] = wij[i][j]/4
-"""
-for t in range(500):
+
+for t in range(t):
         for n in range(4):
                 for i in range(100):
                         wij_some = 0
@@ -108,9 +111,10 @@ for t in range(500):
                         ci[t+1][n][i] = kr*ci[t][n][i] - ar*x[t][n][i] + a0
                         x[t+1][n][i] = lab.sigmoid(ni[t+1][n][i]+ci[t+1][n][i])     
         lab.number_to_image(x[t][0],t)
-"""
 
+"""
 lab.number_to_image(x[0][0],10001)
 lab.number_to_image(x[0][1],10002)
 lab.number_to_image(x[0][2],10003)
 lab.number_to_image(x[0][3],10004)
+"""
