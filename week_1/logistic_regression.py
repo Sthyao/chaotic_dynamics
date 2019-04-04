@@ -13,9 +13,9 @@ x = 0.5
 for i in range(0,150):
     x = np.multiply(np.multiply(r, x), 1-x)
 
-for i in range(0,150):
+for i in range(0,40):
     x = np.multiply( np.multiply(r, x), 1-x)
-    plt.scatter(r,x,s = 0.001,c = 'b')
+    plt.scatter(r,x,s = 0.01,c = 'k')
 
 plt.show()
 

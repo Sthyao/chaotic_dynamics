@@ -6,6 +6,8 @@ import lab
 k = 0.5 
 b = 0.04
 A = 1
+
+
 a = np.linspace(0,1,10000,endpoint= True)
 leng = len(a)
 ly = np.zeros(10000)

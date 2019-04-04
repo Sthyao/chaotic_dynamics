@@ -2,10 +2,10 @@ import numpy as np
 import lab
 
 a0 = 2
-ar = 11
+ar = 10
 kf = 0.15
-kr = 0.95
-t = 800
+kr = 0.9
+t = 200
 
 a = np.array((
         1,1,0,0,0,0,0,0,1,1,

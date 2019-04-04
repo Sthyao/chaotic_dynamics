@@ -33,8 +33,8 @@ for i in range(0,100):
     for j in range(0,3):
         yy1[j] = yy[j][0]
         yy2[j] = yy[j][1]
-    plt.plot(yy1,yy2,c = 'y')
+    plt.plot(yy1,yy2,c = 'k')
 
-plt.scatter(xx0,y1,s = 1, c = 'r')
-plt.scatter(xx0,y2,s = 1, c = 'b')
+plt.plot(xx0,y1, c = 'k')
+plt.plot(xx0,y2, c = 'k')
 plt.show()

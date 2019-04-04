@@ -5,7 +5,7 @@ import time
 from PIL import Image 
 
 k = 0.5
-b = 1
+b = 0.02
 A = 1
 #init
 
@@ -55,7 +55,7 @@ def number_to_image(a,id):
                         else:
                                 img.putpixel((i,j),pixTupleW)
         string = str(id) + '.png'
-        img.save( 'd:\Git\chaos\week_2\py\\'+string, 'PNG')
+        img.save( 'd:\Git\chaos\week_2\py2\\'+string, 'PNG')
         #img.show()
 
 
