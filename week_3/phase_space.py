@@ -5,7 +5,10 @@ a0 = 2
 ar = 10
 kf = 0.15
 kr = 0.9
-t = 200
+
+t = 500
+pattern = 0
+M = 80
 
 a = np.array((
         1,1,0,0,0,0,0,0,1,1,
@@ -61,28 +64,6 @@ d = np.array((
 
 pettern0 = [a,b,c,d]
 
-
-
-"""
-def fw(pettern,i,j):
-    wij = 0
-    for k in range(4):
-        wij += (pettern[k][i]-0.5)*(pettern[k][j]-0.5)
-    return wij
-
-def fn(pettern,x,i):
-    w_sum = 0
-    for j in range(100):
-        w_sum += fw(pettern,i,j)*x[j]
-    return w_sum + 0
-
-def fc(x,a):
-    return 0 - ar*x + a
-
-def y(pettern,x,i,a):
-    return fn(pettern,x,i) + fc(x,a)
-"""
-
 x = np.zeros((5001,4,100))
 ni = np.zeros((5001,4,100))
 ci = np.zeros((5001,4,100))
@@ -92,7 +73,7 @@ x[0][1] = pettern0[1]
 x[0][2] = pettern0[2]
 x[0][3] = pettern0[3]
 
-
+process_bar = lab.ShowProcess(t,"ok")
 wij = np.zeros((100,100)) 
 
 for i in range(100):
@@ -100,23 +81,28 @@ for i in range(100):
                 for p in range(4):
                         wij[i][j] += (2*x[0][p][i]-1)*(2*x[0][p][j]-1)
                 wij[i][j] = wij[i][j]/4
-process_bar = lab.ShowProcess(t,"ok")
 
 for t in range(t):
         for n in range(4):
                 for i in range(100):
                         wij_some = 0
+                        max_ci = 0
+
+                        for s in range(100):
+                                max_ci += abs(ci[t][n][s])
+
                         for j in range(100):
                                 wij_some += wij[i][j]*x[t][n][j]
+                        max_ci = max_ci/M
                         ni[t+1][n][i] = kf*ni[t][n][i] + wij_some
                         ci[t+1][n][i] = kr*ci[t][n][i] - ar*x[t][n][i] + a0
+            
+                        if ci[t+1][n][i] >= max_ci and t != 0:
+                            ci[t+1][n][i] = max_ci
+                        elif ci[t+1][n][i] <= -max_ci and t != 0:
+                            ci[t+1][n][i] = -max_ci
+
                         x[t+1][n][i] = lab.sigmoid(ni[t+1][n][i]+ci[t+1][n][i])     
-        lab.number_to_image(x[t][0],t)
+        lab.number_to_image(x[t][pattern],t)
         process_bar.show_process()  
 
-"""
-lab.number_to_image(x[0][0],10001)
-lab.number_to_image(x[0][1],10002)
-lab.number_to_image(x[0][2],10003)
-lab.number_to_image(x[0][3],10004)
-"""
