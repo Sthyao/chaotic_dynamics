@@ -6,7 +6,7 @@ ar = 10
 kf = 0.15
 kr = 0.9
 
-t = 500
+t = 1000
 pattern = 0
 M = 80
 
@@ -50,11 +50,11 @@ c = np.array((
 ))
 
 d = np.array((
-    0,0,1,0,0,0,0,1,0,0,
+    0,0,1,1,0,0,1,1,0,0,
     0,0,1,1,0,0,1,1,0,0,
     0,0,1,1,1,1,1,1,0,0,
     0,0,1,1,1,1,1,1,0,0,
-    0,0,1,1,1,1,1,1,0,0,
+    0,0,1,1,1,1,1,1,1,0,
     0,1,1,1,1,1,1,1,1,0,
     1,1,1,1,1,1,1,1,1,1,
     0,0,0,1,1,1,1,0,0,0,
@@ -65,8 +65,8 @@ d = np.array((
 pettern0 = [a,b,c,d]
 
 x = np.zeros((5001,4,100))
-ni = np.zeros((5001,4,100))
-ci = np.zeros((5001,4,100))
+ni = np.random.uniform(0, 1, (5001,4,100))
+ci = np.random.uniform(0, 1, (5001,4,100))
 
 x[0][0] = pettern0[0]
 x[0][1] = pettern0[1]
@@ -89,7 +89,7 @@ for t in range(t):
                         max_ci = 0
 
                         for s in range(100):
-                                max_ci += abs(ci[t][n][s])
+                                max_ci += abs(ni[t][n][s])
 
                         for j in range(100):
                                 wij_some += wij[i][j]*x[t][n][j]
