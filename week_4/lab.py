@@ -2,6 +2,7 @@ import math
 import numpy as np
 import sys
 import time
+import random
 from PIL import Image 
 
 k = 0.5
@@ -11,7 +12,7 @@ A = 1
 
 def hamming(array0, array1):
         sum = 0
-        for i in range(len(array0)):
+        for i in range(100):
                 if array0[i] == array1[i]:
                         sum += 1
         return sum
@@ -101,3 +102,10 @@ class ShowProcess():
                 print('')
                 print(self.infoDone)
                 self.i = 0
+
+
+def random_init():
+        a = np.zeros(100)
+        for i in range(100):
+                a[i] = random.randint(0,1)
+        return a
