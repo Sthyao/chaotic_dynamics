@@ -63,7 +63,7 @@ def number_to_image(a,id):
                         else:
                                 img.putpixel((i,j),pixTupleW)
         string = str(id) + '.png'
-        img.save( 'd:\Git\chaos\week_4\py\\'+string, 'PNG')
+        img.save( 'd:\Git\chaos\week_5\py\\'+string, 'PNG')
         #img.save('py/'+string,'PNG')
         #img.show()
 

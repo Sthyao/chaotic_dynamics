@@ -6,12 +6,12 @@ a0 = 2
 ar = 10
 kf = 0.15
 kr = 0.9
-t = 200
+t = 2000
 
 A = 7
 A_ = 11
 D = 13
-b0 = 0.1
+b0 = math.pi/150.0
 sert = 0
 
 
@@ -25,6 +25,7 @@ ni = np.zeros((5001,4,100))
 ci = np.zeros((5001,4,100))
 
 x[0][0] = data['init']
+#x[0][0] = pettern0[0]
 x[0][1] = pettern0[1]
 x[0][2] = pettern0[2]
 x[0][3] = pettern0[3]

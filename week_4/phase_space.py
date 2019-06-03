@@ -25,7 +25,7 @@ x[0][1] = pettern0[1]
 x[0][2] = pettern0[2]
 x[0][3] = pettern0[3]
 
-
+"""
 for t in range(t):
         for n in range(4):
                 for i in range(100):
@@ -60,4 +60,5 @@ for i in range(4):
         for j in range(100):
                 sum += x[0][i][j]
         print(sum)
-"""              
+
+print(x[0][0])           
